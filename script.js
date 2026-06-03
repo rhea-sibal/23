@@ -143,7 +143,7 @@ const CARDS = [
   },
   {
     id: 18, image: "assets/images/18-date-night.png",
-    act: "The Queen Era", location: "London", hero: false,
+    act: "Our Moments", location: "London", hero: false,
     question: "Do you know what your smile does for me on the hard days?",
     note: "Another date, another evening with you. Your smile really brings me comfort. More than you probably know! 🌹",
     hidden: "London date night. Her smile, my favourite thing in the world.",
