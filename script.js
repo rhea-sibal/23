@@ -153,7 +153,7 @@ const CARDS = [
     id: 19, image: "assets/images/19-nana-comfort.png",
     act: "Our Moments", location: "London", hero: false,
     question: "Do you remember this day?",
-    note: "You lost your closed one durinf this time. It was one of the hardest days. And I\u2019m really glad I was there for you. Some moments matter more than others and this was one of them! 🤍",
+    note: "You lost your closed one during this time. It was one of the hardest days. And I\u2019m really glad I was there for you. Some moments matter more than others and this was one of them! 🤍",
     hidden: "The day she needed someone. And he was there.",
     alt: "Animated illustration of a girl at home in a cozy fur jacket and beanie"
   },
