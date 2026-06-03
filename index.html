@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>For You, Bunny</title>
+  <meta name="description" content="A birthday letter made with love.">
+  <meta name="theme-color" content="#FDF8F3">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐰</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══════════ LOADING SCREEN ═══════════ -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-content">
+      <span class="loader-bunny">🐰</span>
+      <p class="loader-text">Gathering our memories...</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ HERO / OPENING ═══════════ -->
+  <section id="hero" class="section hero" aria-label="Opening letter">
+    <div class="container">
+      <div class="hero-inner fade-in-up">
+        <p class="hero-eyebrow">Happy 23rd Birthday</p>
+        <h1 class="hero-title">For You, Bunny</h1>
+        <div class="hero-divider" aria-hidden="true">
+          <span class="divider-line"></span>
+          <span class="divider-icon">🐰</span>
+          <span class="divider-line"></span>
+        </div>
+        <div class="hero-letter">
+          <p>Rhea,</p>
+          <p>
+            I know I haven't always gotten everything right.
+            There are things I should have done differently, words I should have said sooner,
+            and moments where I should have just been there more.
+            I'm sorry for that. I really am. Only god knows how many times I've wished I could go back and fix it all.
+          </p>
+          <p>
+            But today isn't about what I got wrong.
+            Today is about you. Who you are, everything you've done,
+            and how much you mean to me.
+          </p>
+          <p>
+            I made this because you deserve something that actually took time and care.
+            Because every memory we've shared matters to me. Every one of them.
+          </p>
+          <p>
+            I know how much you love flowers and I wanted to send you the biggest bouquet
+            I could find. But I wasn't sure if that would've caused problems for you
+            at home with family around. So I decided to do what I'm actually good at
+            and put my whole heart into building this instead.
+          </p>
+          <p>
+            So take your time. Go through these with me.
+            I hope they make you smile.
+          </p>
+          <p class="hero-sign">Nishit</p>
+        </div>
+        <button class="cta-button" id="beginBtn" aria-label="Begin scrolling through memories">
+          <span>Walk Through Our Memories</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CARD CAROUSEL ═══════════ -->
+  <section id="memories" class="section memories" aria-label="Memory cards">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">Our Story</h2>
+        <p class="section-subtitle">Swipe through our memories together</p>
+      </div>
+
+      <div class="carousel-wrapper">
+        <!-- Act label -->
+        <p class="act-label fade-in-up" id="actLabel" aria-live="polite"></p>
+
+        <!-- Card stack -->
+        <div class="card-stack" id="cardStack" role="region" aria-roledescription="carousel" aria-label="Memory cards carousel">
+          <!-- Cards rendered by JS -->
+        </div>
+
+        <!-- Controls -->
+        <div class="card-controls fade-in-up">
+          <button class="card-btn card-prev" id="prevBtn" aria-label="Previous memory" disabled>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="card-progress">
+            <span class="progress-current" id="progressCurrent">1</span>
+            <span class="progress-sep">of</span>
+            <span class="progress-total" id="progressTotal">23</span>
+          </div>
+          <button class="card-btn card-next" id="nextBtn" aria-label="Next memory">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-bar-track" aria-hidden="true">
+          <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+
+        <!-- Swipe hint (mobile) -->
+        <p class="swipe-hint" id="swipeHint" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Swipe or tap cards to explore
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ GALLERY ═══════════ -->
+  <section id="gallery" class="section gallery" aria-label="Photo gallery">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">Every Moment, Gathered</h2>
+        <p class="section-subtitle">All our memories, in one place</p>
+      </div>
+      <div class="gallery-grid" id="galleryGrid" role="list">
+        <!-- Gallery items rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CLOSING LETTER ═══════════ -->
+  <section id="letter" class="section letter" aria-label="Closing letter">
+    <div class="container">
+      <div class="letter-card fade-in-up">
+        <div class="letter-card-inner">
+          <h2 class="letter-greeting">Rhea,</h2>
+          <div class="letter-body">
+            <p>
+              If I could go back and fix every moment I fell short, I would.
+              But I can't. What I can do is be better, starting now.
+            </p>
+            <p>
+              I want you to know that I see you. Not just the version everyone else gets to see,
+              but all of you. The girl who ran a whole marathon,
+              the student who works those long shifts and still finds it in her to smile.
+              The one who flew all the way to California to present her research.
+              The daughter who want to make her parents proud at every moment.
+            </p>
+            <p>
+              But more than any of that, I miss my best friend.
+            </p>
+            <p>
+              I miss you, Rhea. I miss us. I know we had our differences and I know
+              I was wrong. I'm not going to make excuses for that. But I want you to know
+              that I really want you in my life. Not just as a memory on a website,
+              but in it, properly, every day.
+            </p>
+            <p>
+              I want to be a better man. Someone who shows up for you at every moment,
+              not just the easy ones. Someone you can actually count on.
+            </p>
+            <p>
+              I don't care about where the future takes us. I really don't.
+              What I care about is right now. The present. And right now,
+              all I want is for you to know that you matter to me more than I've
+              probably ever shown.
+            </p>
+            <p>
+              Thank you for every memory on this page. For letting me be part of
+              your life. And for being the best part of mine.
+            </p>
+            <p>
+              Happy 23rd birthday, Bunny. I hope this year gives you everything you deserve,
+              which is way more than I could ever fit into words or a website.
+            </p>
+          </div>
+          <p class="hero-sign">Nishit</p>
+          <div class="letter-bunny" aria-hidden="true" style="position:absolute;bottom:16px;right:16px;left:auto;">🐰</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ RESPONSE SECTION ═══════════ -->
+  <section id="response" class="section response" aria-label="Response area">
+    <div class="container">
+      <div class="section-header fade-in-up">
+        <h2 class="section-title">Before You Go</h2>
+      </div>
+      <div class="response-card fade-in-up">
+        <div class="response-intro">
+          <p>
+            I made this because you matter to me. Not to convince you of anything
+            or to make you feel like you have to respond a certain way.
+            Just because I wanted you to know that I remember everything,
+            and I care about us.
+          </p>
+          <p>
+            If you want to say something back, anything at all, I'd really like to hear it.
+            And if you're not ready yet, that's okay too.
+          </p>
+        </div>
+
+        <div class="quick-actions">
+          <button class="quick-btn" data-prefill="You're lucky this website is so cute. But I do want you to know... ">
+            <span class="quick-icon">&#10084;&#65039;</span>
+            <span>Forgive Me</span>
+          </button>
+          <button class="quick-btn" data-prefill="Okay, here's what I'm still upset about, and I need you to hear this: ">
+            <span class="quick-icon">&#128173;</span>
+            <span>Tell Me What You're Still Mad About</span>
+          </button>
+          <button class="quick-btn" data-prefill="I wanted to tell you that ">
+            <span class="quick-icon">&#128140;</span>
+            <span>Just Send A Message</span>
+          </button>
+        </div>
+
+        <div class="response-form">
+          <label for="responseText" class="response-label">Your message</label>
+          <textarea
+            id="responseText"
+            class="response-textarea"
+            placeholder="Write whatever is on your heart..."
+            rows="6"
+            aria-label="Write your response message"
+          ></textarea>
+          <div class="response-actions">
+            <button class="btn btn-primary" id="sendBtn" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+              Send Message
+            </button>
+            <button class="btn btn-secondary" id="copyBtn" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              <span id="copyLabel">Copy Message</span>
+            </button>
+          </div>
+          <p class="response-note">
+            Send opens your email app.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <p>Made with care, for Bunny <span aria-hidden="true">🐰</span></p>
+  </footer>
+
+  <!-- ═══════════ LIGHTBOX ═══════════ -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <div class="lightbox-overlay"></div>
+    <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous image">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" src="" alt="" loading="eager">
+    </div>
+    <button class="lightbox-nav lightbox-next" aria-label="Next image">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox-counter" id="lightboxCounter" aria-live="polite"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script data-goatcounter="https://nishit.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
