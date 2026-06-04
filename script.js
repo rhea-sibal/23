@@ -25,7 +25,7 @@ const CARDS = [
     id: 3, image: "assets/images/03-us-lake.png",
     act: "Her Beautiful World", location: "United States", hero: true,
     question: "Honestly, how are you this photogenic?",
-    note: "The lake, the mountains, the trees... but honestly they\u2019re just your backdrop. You really are a supermodel, Bunny. One of the best clicks of you ever! 💫",
+    note: "The lake, the mountains, and the trees. You really are a supermodel Bunny. One of the best clicks of you ever! 💫",
     hidden: "A lakeside moment that could be a movie poster.",
     alt: "Animated illustration of a girl by a mountain lake surrounded by tall trees"
   },
@@ -33,7 +33,7 @@ const CARDS = [
     id: 4, image: "assets/images/04-us-white-house.png",
     act: "Her Beautiful World", location: "Washington D.C.", hero: false,
     question: "Do you remember how excited you were that day?",
-    note: "In front of the White House, scarf on, owning the moment. You really enjoyed that day and I\u2019m so happy you got to experience such a place. You cherish all the memories, and so do I! 🇺🇸",
+    note: "The one infront of the White House. You really enjoyed that day and I\u2019m so happy you got to experience such a place. You cherish all the memories, and so do I! 🇺🇸",
     hidden: "Washington D.C. The White House, autumn vibes, and her biggest smile.",
     alt: "Animated illustration of a girl near the White House wearing a plaid scarf in autumn"
   },
@@ -49,7 +49,7 @@ const CARDS = [
     id: 6, image: "assets/images/06-london-marathon.png",
     act: "What She\u2019s Achieved", location: "London", hero: true,
     question: "Do you remember how it felt crossing that line?",
-    note: "The London Marathon. One of the biggest days of your life. Ponytail flying, heart pounding, thousands of people around you, and you actually did it. I\u2019m so proud of you! 🏅",
+    note: "The London Marathon. One of the biggest days of your life. You prepared for this moment for so long and you actually did it. I\u2019m so proud of you! 🏅",
     hidden: "London Marathon. She ran it. She finished it. She was incredible.",
     alt: "Animated illustration of a girl running in the London Marathon"
   },
@@ -121,13 +121,13 @@ const CARDS = [
     id: 15, image: "assets/images/16-cambridge-night.png",
     act: "Her Roots & Grace", location: "Cambridge", hero: false,
     question: "Do you remember this quiet evening walk?",
-    note: "This photo is so stunning. You\u2019re literally a supermodel, Rhea. The quiet street, the warm lights, you walking through it all. Amazing at whatever you do! 🔥",
+    note: "This photo is so stunning. You\u2019re literally a supermodel, Rhea. You owned the Cambridge. Amazing at whatever you do! 🔥",
     hidden: "A quiet Cambridge evening. And she made it cinematic.",
     alt: "Animated illustration of a girl walking on a path at night with warm lights"
   },
   {
     id: 16, image: "assets/images/15-mayfair-purple-dress.png",
-    act: "Our Moments", location: "London, Mayfair", hero: true,
+    act: "Our Moments", location: "London", hero: true,
     question: "Do you remember where we went for your birthday dinner?",
     note: "The sun was shining on you, that purple dress, the garden around you. We were heading to Mayfair for your birthday dinner. You looked absolutely breathtaking that evening! 💃",
     hidden: "Isabella Restaurant, Mayfair. Her birthday dinner. Unforgettable.",
@@ -153,7 +153,7 @@ const CARDS = [
     id: 19, image: "assets/images/19-nana-comfort.png",
     act: "Our Moments", location: "London", hero: false,
     question: "Do you remember this day?",
-    note: "You lost your closed one during this time. It was one of the hardest days. And I\u2019m really glad I was there for you. Some moments matter more than others and this was one of them! 🤍",
+    note: "You lost someone you loved deeply. It was one of the hardest days. And I\u2019m really glad I was there for you. Some moments matter more than others and this was one of them! 🤍",
     hidden: "The day she needed someone. And he was there.",
     alt: "Animated illustration of a girl at home in a cozy fur jacket and beanie"
   },
@@ -193,7 +193,7 @@ const CARDS = [
 
 const CONFIG = {
   email: "attnishit@gmail.com",
-  subject: "About Your Birthday Website \u2764\uFE0F",
+  subject: "About Your Birthday Website!",
   swipeThreshold: 0.15, // fraction of card width
   peekCards: 2,          // how many cards peek on each side
 };
